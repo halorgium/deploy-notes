@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+$:.unshift File.dirname(__FILE__)
+require 'notes'
+
+c = Commit.new("HEAD")
+c.deploys.each do |d|
+  pp d.time
+end

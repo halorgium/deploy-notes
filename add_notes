@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+$:.unshift File.dirname(__FILE__)
+require 'notes'
+
+c = Commit.new("HEAD")
+c.add_deploy("http://deployer.local/22", "2010-08-26T08:29:54Z", "halorgium")
+c.add_deploy("http://deployer.local/20", "2010-08-26T07:29:54Z", "sr")
+
+c = Commit.new("HEAD^")
+c.add_deploy("http://deployer.local/18", "2010-08-24T08:29:54Z", "sr")
+c.add_deploy("http://deployer.local/12", "2010-08-24T07:29:54Z", "halorgium")
